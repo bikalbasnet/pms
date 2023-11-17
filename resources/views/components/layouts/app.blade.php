@@ -31,7 +31,11 @@
             @endif
 
             <x-menu-item title="Home" icon="o-home" link="/" />
-            <x-menu-item title="Yeah" icon="o-sparkles" link="####" />
+            <x-menu-sub title="Patient" icon="o-user">
+                <x-menu-item title="All Patient" icon="o-users" link="/patient" />
+                <x-menu-item title="Add New Patient" icon="o-user-plus" link="/patient/new" />
+            </x-menu-sub>
+
 
             <x-menu-sub title="Settings" icon="o-cog-6-tooth">
                 <x-menu-item title="Wifi" icon="o-wifi" link="####" />

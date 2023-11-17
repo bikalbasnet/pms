@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Welcome::class);
 
-Route::get('/patient', Patient::class);
+Route::get('/patient', Patient\CreatePatient::class);
+Route::get('/patient/new', Patient\CreatePatient::class);
 
 Route::get('/counter', \App\Livewire\Counter::class);
