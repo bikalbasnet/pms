@@ -11,7 +11,7 @@
         $headers = [
             ['key' => 'id', 'label' => '#'],
             ['key' => 'name', 'label' => 'Name'],
-            ['key' => 'registrationNumber', 'label' => 'NMC Number'],
+            ['key' => 'registration_number', 'label' => 'NMC Number'],
             ['key' => 'phone', 'label' => 'Phone'],
         ];
     @endphp

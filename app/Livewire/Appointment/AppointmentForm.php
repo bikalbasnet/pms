@@ -10,16 +10,16 @@ use Livewire\Form;
 class AppointmentForm extends Form
 {
     #[Rule('required')]
-    public $patientId;
+    public $patientId = null;
 
     #[Rule('required')]
     public $doctorId;
 
-    #[Rule('required|date')]
-    public $appointmentDate;
+    #[Rule('required|date_format:Y-m-d')]
+    public $date;
 
     #[Rule('nullable|date_format:H:i')]
-    public $appointmentTime;
+    public $time;
 
     public $notes;
 }

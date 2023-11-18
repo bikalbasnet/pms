@@ -12,7 +12,7 @@ class DoctorForm extends Form
     #[Rule('required')]
     public $name;
 
-    public $registationNumber;
+    public $registrationNumber;
 
     public $specialization;
 

@@ -15,7 +15,10 @@ class CreateDoctor extends Component
     {
         $this->validate();
 
-        Doctor::create($this->form->all());
+        $doctor = $this->form->all();
+        $doctor['registration_number'] = $this->form->registrationNumber;
+
+        Doctor::create($doctor);
 
         return redirect()->to('/doctor')->with('message', 'Doctor created.');
     }

@@ -4,7 +4,7 @@
         <x-choices
             label="Patient"
             search-function="searchPatients"
-            wire:model="patientSearchableId"
+            wire:model="form.patientId"
             :options="$patientSearchable"
             option-label="name"
             option-sub-label="phone"
@@ -14,7 +14,7 @@
         />
         <x-choices
             label="Doctor"
-            wire:model="doctorSearchableId"
+            wire:model="form.doctorId"
             search-function="searchDoctors"
             :options="$doctorSearchable"
             option-label="name"
@@ -23,8 +23,8 @@
             single
             searchable
         />
-        <x-datetime label="Date" wire:model="myDate" icon="o-calendar" />
-        <x-datetime label="Time" wire:model="myDate" icon="o-calendar" type="time" />
+        <x-datetime label="Date" wire:model="form.date" icon="o-calendar" />
+        <x-datetime label="Time" wire:model="form.time" icon="o-calendar" type="time" />
 
         <x-textarea
             label="Notes"
