@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Welcome::class);
 
-Route::get('/patient', Patient\CreatePatient::class);
+Route::get('/patient', Patient\ShowPatients::class);
 Route::get('/patient/new', Patient\CreatePatient::class);
+
+Route::get('/doctor', \App\Livewire\Doctor\ShowDoctors::class);
+Route::get('/doctor/new', \App\Livewire\Doctor\CreateDoctor::class);
+
+Route::get('/appointment/new', \App\Livewire\Appointment\CreateAppointment::class);
 
 Route::get('/counter', \App\Livewire\Counter::class);

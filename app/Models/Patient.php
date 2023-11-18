@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,5 +12,17 @@ class Patient extends Model
 
     protected $table = 'patient';
 
-    protected $fillable = ['name', 'email', 'address', 'phone'];
+    protected $fillable = ['name', 'gender', 'email', 'address', 'phone', 'dob'];
+
+    protected $appends = ['age'];
+
+    public function getAgeAttribute()
+    {
+        return (new Carbon($this->attributes['dob']))->diffInYears(Carbon::now());
+    }
+
+    public function getSearchableNameAttribute()
+    {
+        return "$this->name (Age: $this->age Years)";
+    }
 }

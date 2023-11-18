@@ -13,9 +13,10 @@ class CreatePatient extends Component
     {
         $this->validate();
 
-        Patient::create(
-            $this->form->all()
-        );
+        $patient = $this->form->all();
+        $patient['dob'] = now()->subYears($this->form->ageYear)->subMonths($this->form->ageMonth)->format('Y-m-d');
+
+        Patient::create($patient);
 
         return redirect()->to('/patient')->with('message', 'Patient created.');
     }
