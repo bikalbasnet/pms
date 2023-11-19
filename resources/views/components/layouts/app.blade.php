@@ -13,7 +13,7 @@
     <x-slot:sidebar drawer="main-drawer" collapsible class="pt-3 bg-sky-800 text-white">
 
         {{-- Hidden when collapsed --}}
-        <div class="hidden-when-collapsed ml-5 font-black text-4xl text-yellow-500">mary</div>
+        <div class="hidden-when-collapsed ml-5 font-black text-4xl text-yellow-500">PMS</div>
 
         {{-- Display when collapsed --}}
         <div class="display-when-collapsed ml-5 font-black text-4xl text-orange-500">m</div>
