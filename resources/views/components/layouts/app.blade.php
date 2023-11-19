@@ -40,6 +40,7 @@
                 <x-menu-item title="Add New Doctor" icon="o-user-plus" link="/doctor/new" />
             </x-menu-sub>
             <x-menu-sub title="Appointment" icon="o-user">
+                <x-menu-item title="Appointments" icon="o-users" link="/appointment" />
                 <x-menu-item title="Create Appointment" icon="o-user-plus" link="/appointment/new" />
             </x-menu-sub>
 

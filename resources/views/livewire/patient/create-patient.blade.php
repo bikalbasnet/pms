@@ -1,5 +1,5 @@
 <div>
-    <h1 class="card-title text-xl pb-5 font-bold">Add New Patient</h1>
+    <x-header title="Add New Patient" separator />
     <x-form wire:submit="save">
         <x-input label="Name*" autocomplete="off" placeholder="Full Name" icon="o-user" wire:model="form.name" />
         <x-input label="Phone" autocomplete="off" placeholder="Phone" icon="o-phone" wire:model="form.phone" />1

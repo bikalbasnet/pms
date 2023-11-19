@@ -1,11 +1,13 @@
 <div>
-    <h1 class="card-title text-xl pb-5 font-bold">Patients</h1>
+    <x-header title="Patients" separator>
+        <x-slot:middle>
+            <x-input placeholder="Search By Name / Phone / Email" wire:model.live.debounce.250ms="searchKey" />
+        </x-slot:middle>
+        <x-slot:actions>
+            <x-button icon="o-plus" class="btn-primary" link="/patient/new"/>
+        </x-slot:actions>
+    </x-header>
 
-    <x-input placeholder="Search By Name / Phone / Email " wire:model.live.debounce.250ms="searchKey">
-        <x-slot:append>
-            <x-button label="Search" icon="o-magnifying-glass" class="btn-primary rounded-l-none" />
-        </x-slot:append>
-    </x-input>
     @php
         $headers = [
             ['key' => 'id', 'label' => '#'],

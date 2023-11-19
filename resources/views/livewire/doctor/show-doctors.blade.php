@@ -1,11 +1,12 @@
 <div>
-    <h1 class="text-xl pb-5">Doctors</h1>
-
-    <x-input placeholder="Search By Name / NMC Number " wire:model.live.debounce.250ms="searchKey">
-        <x-slot:append>
-            <x-button label="Search" icon="o-magnifying-glass" class="btn-primary rounded-l-none" />
-        </x-slot:append>
-    </x-input>
+    <x-header title="Doctors" separator>
+        <x-slot:middle>
+            <x-input placeholder="Search By Name / NMC Number " wire:model.live.debounce.250ms="searchKey" />
+        </x-slot:middle>
+        <x-slot:actions>
+            <x-button icon="o-plus" class="btn-primary" link="/doctor/new"/>
+        </x-slot:actions>
+    </x-header>
 
     @php
         $headers = [
