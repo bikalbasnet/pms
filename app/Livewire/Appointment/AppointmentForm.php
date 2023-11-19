@@ -15,7 +15,7 @@ class AppointmentForm extends Form
     #[Rule('required')]
     public $doctorId;
 
-    #[Rule('required|date_format:Y-m-d')]
+    #[Rule('required|date_format:Y-m-d|after_or_equal:today')]
     public $date;
 
     #[Rule('nullable|date_format:H:i')]

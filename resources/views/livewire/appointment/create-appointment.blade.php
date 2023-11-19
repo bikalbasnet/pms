@@ -2,7 +2,7 @@
     <h1 class="card-title text-xl pb-5 font-bold">New Appointment</h1>
     <x-form wire:submit="save">
         <x-choices
-            label="Patient"
+            label="Patient*"
             search-function="searchPatients"
             wire:model="form.patientId"
             :options="$patientSearchable"
@@ -13,7 +13,7 @@
             searchable
         />
         <x-choices
-            label="Doctor"
+            label="Doctor*"
             wire:model="form.doctorId"
             search-function="searchDoctors"
             :options="$doctorSearchable"
@@ -23,7 +23,7 @@
             single
             searchable
         />
-        <x-datetime label="Date" wire:model="form.date" icon="o-calendar" />
+        <x-datetime label="Appointment Date*" wire:model="form.date" icon="o-calendar" />
         <x-datetime label="Time" wire:model="form.time" icon="o-calendar" type="time" />
 
         <x-textarea
