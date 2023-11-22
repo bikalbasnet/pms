@@ -4,7 +4,7 @@
             <x-input placeholder="Search By Name / Phone / Email" wire:model.live.debounce.250ms="searchKey" />
         </x-slot:middle>
         <x-slot:actions>
-            <x-button icon="o-plus" class="btn-primary" link="/patient/new"/>
+            <x-button label="Add Patient" icon="o-plus" class="btn-primary" link="/patient/new"/>
         </x-slot:actions>
     </x-header>
 

@@ -6,18 +6,30 @@
         <x-slot:middle>
             <x-form>
                 <x-select
-                    label="Filter By Doctor"
                     icon="o-user"
                     :options="$doctors"
                     option-value="id"
                     wire:model.live="filterDoctorId"
-                    placeholder="Select a Doctor"
+                    placeholder="All Doctors"
                 />
-                <x-input label="Search Appointment" wire:model.live="searchKey" placeholder="Search By Patient Name, Phone number"/>
+                <x-input wire:model.live="searchKey" placeholder="Search By Patient Name, Phone number"/>
+                @php
+                    $options = [
+                        [
+                            'id' => 'future',
+                            'name' => 'Future Appointments'
+                        ],
+                        [
+                            'id' => 'past',
+                            'name' => 'Past Appointments'
+                        ],
+                    ];
+                @endphp
+                <x-radio :options="$options" wire:model.live="filterAppointmentDate" />
             </x-form>
         </x-slot:middle>
         <x-slot:actions>
-            <x-button icon="o-plus" class="btn-primary" link="/appointment/new"/>
+            <x-button label="Add Appointment" icon="o-plus" class="btn-primary" link="/appointment/new"/>
         </x-slot:actions>
     </x-header>
     @php

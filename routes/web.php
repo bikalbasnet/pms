@@ -19,6 +19,7 @@ Route::get('/', Welcome::class);
 
 Route::get('/patient', Patient\ShowPatients::class);
 Route::get('/patient/new', Patient\CreatePatient::class);
+Route::get('/patient/edit/{patient}', Patient\UpdatePatient::class);
 
 Route::get('/doctor', \App\Livewire\Doctor\ShowDoctors::class);
 Route::get('/doctor/new', \App\Livewire\Doctor\CreateDoctor::class);

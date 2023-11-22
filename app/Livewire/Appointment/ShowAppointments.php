@@ -13,6 +13,8 @@ class ShowAppointments extends Component
 
     public $searchKey;
 
+    public $filterAppointmentDate = 'future'; // 'future' or 'past
+
     public function render()
     {
         $appointments = $this->filterDoctorId
@@ -26,6 +28,9 @@ class ShowAppointments extends Component
             });
         }
 
+        if ($this->filterAppointmentDate === 'future') {
+            $appointments->where('appointment_date', '>=', now()->format('Y-m-d'));
+        }
         $appointments = $appointments->get();
 
         return view('livewire.appointment.show-appointments')->with([

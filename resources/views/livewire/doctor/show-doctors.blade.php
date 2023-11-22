@@ -4,7 +4,7 @@
             <x-input placeholder="Search By Name / NMC Number " wire:model.live.debounce.250ms="searchKey" />
         </x-slot:middle>
         <x-slot:actions>
-            <x-button icon="o-plus" class="btn-primary" link="/doctor/new"/>
+            <x-button label="Add Doctor" icon="o-plus" class="btn-primary" link="/doctor/new"/>
         </x-slot:actions>
     </x-header>
 

@@ -31,18 +31,21 @@
             @endif
 
             <x-menu-item title="Home" icon="o-home" link="/" />
-            <x-menu-sub title="Patient" icon="o-user">
+            <x-menu-item title="Patients" icon="o-users" link="/patient" />
+            <x-menu-item title="Doctors" icon="o-users" link="/doctor" />
+            <x-menu-item title="Appointments" icon="o-users" link="/appointment" />
+            {{--<x-menu-sub title="Patient" icon="o-user">
                 <x-menu-item title="Patients" icon="o-users" link="/patient" />
                 <x-menu-item title="Add New Patient" icon="o-user-plus" link="/patient/new" />
-            </x-menu-sub>
-            <x-menu-sub title="Doctor" icon="o-user">
-                <x-menu-item title="Doctors" icon="o-users" link="/doctor" />
-                <x-menu-item title="Add New Doctor" icon="o-user-plus" link="/doctor/new" />
-            </x-menu-sub>
-            <x-menu-sub title="Appointment" icon="o-user">
-                <x-menu-item title="Appointments" icon="o-users" link="/appointment" />
-                <x-menu-item title="Create Appointment" icon="o-user-plus" link="/appointment/new" />
-            </x-menu-sub>
+            </x-menu-sub>--}}
+{{--            <x-menu-sub title="Doctor" icon="o-user">--}}
+{{--                <x-menu-item title="Doctors" icon="o-users" link="/doctor" />--}}
+{{--                <x-menu-item title="Add New Doctor" icon="o-user-plus" link="/doctor/new" />--}}
+{{--            </x-menu-sub>--}}
+{{--            <x-menu-sub title="Appointment" icon="o-user">--}}
+{{--                <x-menu-item title="Appointments" icon="o-users" link="/appointment" />--}}
+{{--                <x-menu-item title="Create Appointment" icon="o-user-plus" link="/appointment/new" />--}}
+{{--            </x-menu-sub>--}}
 
 {{--            <x-menu-sub title="Settings" icon="o-cog-6-tooth">--}}
 {{--                <x-menu-item title="Wifi" icon="o-wifi" link="####" />--}}

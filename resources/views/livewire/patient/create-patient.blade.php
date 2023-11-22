@@ -1,5 +1,5 @@
 <div>
-    <x-header title="Add New Patient" separator />
+    <x-header title="{{ $form->id === null ? 'Add New Patient' : 'Edit' }}" separator />
     <x-form wire:submit="save">
         <x-input label="Name*" autocomplete="off" placeholder="Full Name" icon="o-user" wire:model="form.name" />
         @php
@@ -22,7 +22,7 @@
 
         <x-input label="Phone" autocomplete="off" placeholder="Phone" icon="o-phone" wire:model="form.phone" />
         <x-input label="Address" icon="o-map" wire:model="form.address"></x-input>
-        <div>
+        <div class="grid-container">
             <x-input label="Year" type="number" wire:model="form.ageYear"></x-input>
             <x-input label="Month" type="number" wire:model="form.ageMonth"></x-input>
         </div>
