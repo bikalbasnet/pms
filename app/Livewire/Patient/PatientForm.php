@@ -10,7 +10,7 @@ use Livewire\Form;
     {
         public ?Patient $patient;
 
-        public $id;
+        public $patientId;
 
         #[Rule('required|min:3')]
         public $name;
@@ -37,7 +37,7 @@ use Livewire\Form;
         {
             $this->patient = $patient;
 
-            $this->id = $patient->id;
+            $this->patientId = $patient->patient_id;
             $this->name = $patient->name;
             $this->gender = $patient->gender;
             $this->phone = $patient->phone;

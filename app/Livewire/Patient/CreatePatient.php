@@ -15,6 +15,7 @@ class CreatePatient extends Component
 
         $patient = $this->form->all();
         $patient['dob'] = now()->subYears($this->form->ageYear)->subMonths($this->form->ageMonth)->format('Y-m-d');
+        $patient['patient_id'] = 'P-' . rand(10000, 99999);
 
         Patient::create($patient);
 

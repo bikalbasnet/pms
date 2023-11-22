@@ -1,6 +1,7 @@
 <div>
-    <x-header title="{{ $form->id === null ? 'Add New Patient' : 'Edit' }}" separator />
+    <x-header title="{{ $form->patient === null ? 'Add New Patient' : 'Edit' }}" separator />
     <x-form wire:submit="save">
+        <x-input label="Patient Id" disabled  icon="o-envelope" wire:model="form.patientId" />
         <x-input label="Name*" autocomplete="off" placeholder="Full Name" icon="o-user" wire:model="form.name" />
         @php
             $genders = [

@@ -36,7 +36,9 @@
         $headers = [
             ['key' => 'doctor.name', 'label' => 'Doctor'],
             ['key' => 'patient.name', 'label' => 'Patient'],
-            ['key' => 'appointment_date', 'label' => 'Date']
+            ['key' => 'date', 'label' => 'Date'],
+            ['key' => 'time', 'label' => 'Date'],
+            ['key' => 'remaining_days', 'label' => 'Remaining Days']
         ];
     @endphp
     <x-table :headers="$headers" :rows="$appointments" striped></x-table>

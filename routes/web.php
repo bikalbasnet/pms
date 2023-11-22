@@ -23,6 +23,7 @@ Route::get('/patient/edit/{patient}', Patient\UpdatePatient::class);
 
 Route::get('/doctor', \App\Livewire\Doctor\ShowDoctors::class);
 Route::get('/doctor/new', \App\Livewire\Doctor\CreateDoctor::class);
+Route::get('/doctor/edit/{doctor}', \App\Livewire\Doctor\UpdateDoctor::class);
 
 Route::get('/appointment', \App\Livewire\Appointment\ShowAppointments::class);
 Route::get('/appointment/new', \App\Livewire\Appointment\CreateAppointment::class);

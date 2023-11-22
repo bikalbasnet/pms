@@ -10,7 +10,6 @@
 
     @php
         $headers = [
-            ['key' => 'id', 'label' => '#'],
             ['key' => 'name', 'label' => 'Name'],
             ['key' => 'registration_number', 'label' => 'NMC Number'],
             ['key' => 'phone', 'label' => 'Phone'],

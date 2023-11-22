@@ -17,6 +17,7 @@ class ShowPatients extends Component
             ? Patient::where('name', 'like', "%$this->searchKey%")
                 ->orWhere('phone', 'like', "%$this->searchKey%")
                 ->orWhere('email', 'like', "%$this->searchKey%")
+                ->orWhere('patient_id', 'like', "%$this->searchKey%")
                 ->take(50)
                 ->get()
             : Patient::all()->take(50);

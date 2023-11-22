@@ -1,5 +1,5 @@
 <div>
-    <x-header title="Add New Doctor" separator />
+    <x-header title="{{ $form->doctor === null ? 'Add New Doctor' : 'Edit Doctor' }}" separator />
     <x-form wire:submit="save">
         <x-input label="Name*" placeholder="Full Name" icon="o-user" wire:model="form.name" />
         <x-input label="NMC Registration Number" icon="o-user" wire:model="form.registrationNumber" />

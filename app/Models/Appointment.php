@@ -28,4 +28,24 @@ class Appointment extends Model
     {
         return $this->hasOne(Patient::class, 'id', 'patient_id');
     }
+
+    public function getDateAttribute()
+    {
+        return (new \Carbon\Carbon($this->attributes['appointment_date']))->format('d M Y');
+    }
+
+    public function getTimeAttribute()
+    {
+        $time = (new \Carbon\Carbon($this->attributes['appointment_date']))->format('h:i A');
+        if ($time === '12:00 AM') {
+            return '-';
+        }
+
+        return $time;
+    }
+
+    public function getRemainingDaysAttribute()
+    {
+        return now()->diffInDays($this->attributes['appointment_date'], false) . ' days remaining';
+    }
 }
