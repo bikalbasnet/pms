@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -46,6 +47,6 @@ class Appointment extends Model
 
     public function getRemainingDaysAttribute()
     {
-        return now()->diffInDays($this->attributes['appointment_date'], false) . ' days remaining';
+        return Carbon::parse($this->attributes['appointment_date'])->diffForHumans();
     }
 }

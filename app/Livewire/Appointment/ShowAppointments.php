@@ -18,8 +18,8 @@ class ShowAppointments extends Component
     public function render()
     {
         $appointments = $this->filterDoctorId
-            ? Appointment::where('doctor_id', $this->filterDoctorId)->orderBy('appointment_date', 'ASC')
-            : Appointment::orderBy('appointment_date', 'DESC');
+            ? Appointment::where('doctor_id', $this->filterDoctorId)
+            : Appointment::whereNotNull('doctor_id');
 
         if ($this->searchKey) {
             $appointments = $appointments->whereHas('patient', function ($query) {
@@ -31,6 +31,16 @@ class ShowAppointments extends Component
         if ($this->filterAppointmentDate === 'future') {
             $appointments->where('appointment_date', '>=', now()->format('Y-m-d'));
         }
+
+        if ($this->filterAppointmentDate === 'past') {
+            $appointments->where('appointment_date', '<', now()->format('Y-m-d'));
+        }
+
+        // order by closet remaining days in future
+        if ($this->filterAppointmentDate === 'future') {
+            $appointments->orderByRaw('ABS(DATEDIFF(appointment_date, NOW()))');
+        }
+
         $appointments = $appointments->get();
 
         return view('livewire.appointment.show-appointments')->with([
