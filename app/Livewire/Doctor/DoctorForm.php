@@ -10,7 +10,7 @@ use Livewire\Form;
 
 class DoctorForm extends Form
 {
-    public ?Doctor $doctor;
+    public ?Doctor $doctor = null;
 
     #[Rule('required')]
     public $name;

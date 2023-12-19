@@ -8,7 +8,7 @@ use Livewire\Form;
 
     class PatientForm extends Form
     {
-        public ?Patient $patient;
+        public ?Patient $patient = null;
 
         public $patientId;
 
