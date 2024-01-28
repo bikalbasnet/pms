@@ -10,7 +10,7 @@ class Welcome extends Component
     {
         return <<<'HTML'
         <div>
-            Hello :)
+            Welcome to Dashboard
         </div>
         HTML;
     }

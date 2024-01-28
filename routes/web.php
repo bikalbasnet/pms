@@ -15,17 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Welcome::class);
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::get('/', Welcome::class);
 
-Route::get('/patient', Patient\ShowPatients::class);
-Route::get('/patient/new', Patient\CreatePatient::class);
-Route::get('/patient/edit/{patient}', Patient\UpdatePatient::class);
 
-Route::get('/doctor', \App\Livewire\Doctor\ShowDoctors::class);
-Route::get('/doctor/new', \App\Livewire\Doctor\CreateDoctor::class);
-Route::get('/doctor/edit/{doctor}', \App\Livewire\Doctor\UpdateDoctor::class);
+    Route::get('/patient', Patient\ShowPatients::class)->middleware('auth');;
+    Route::get('/patient/new', Patient\CreatePatient::class);
+    Route::get('/patient/edit/{patient}', Patient\UpdatePatient::class);
 
-Route::get('/appointment', \App\Livewire\Appointment\ShowAppointments::class);
-Route::get('/appointment/new', \App\Livewire\Appointment\CreateAppointment::class);
+    Route::get('/doctor', \App\Livewire\Doctor\ShowDoctors::class);
+    Route::get('/doctor/new', \App\Livewire\Doctor\CreateDoctor::class);
+    Route::get('/doctor/edit/{doctor}', \App\Livewire\Doctor\UpdateDoctor::class);
 
-Route::get('/counter', \App\Livewire\Counter::class);
+    Route::get('/appointment', \App\Livewire\Appointment\ShowAppointments::class);
+    Route::get('/appointment/new', \App\Livewire\Appointment\CreateAppointment::class);
+});
+
+Route::get('/login', \App\Livewire\Auth\Login::class)->name('login');
+Route::get('/logout', \App\Http\Controllers\AuthController::class . '@logout');
+
